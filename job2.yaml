@@ -1,0 +1,14 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: mysecondjob
+spec:
+  template:
+    spec:
+      containers:
+      - name: whalesasay
+        image: docker/whalesay
+        command: ["echo", "This is Salman Kubernetes job!!!!"]
+      restartPolicy: Never
+  backoffLimit: 4
+  activeDeadlineSeconds: 60

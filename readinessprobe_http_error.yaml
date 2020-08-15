@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+ name: rn-http-error
+spec:
+ containers:
+ - name: rn-http-error
+   image: salman079/hello-world-kids
+   ports:
+   - containerPort: 80
+   readinessProbe:
+     httpGet:     
+       port: 90
+       path: /

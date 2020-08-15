@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+ name: rn-tcp-noerror
+spec:
+ containers:
+ - name: rn-tcp-noerror
+   image: salman079/hello-world-kids
+   ports:
+   - containerPort: 80
+   readinessProbe:
+     tcpSocket:
+       port: 8080

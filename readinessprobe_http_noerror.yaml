@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+ name: rn-http-noerror
+spec:
+ containers:
+ - name: rn-http-noerror
+   image: salman079/hello-world-kids
+   ports:
+   - containerPort: 80
+   readinessProbe:
+     httpGet:     
+       port: 80
+       path: /
+

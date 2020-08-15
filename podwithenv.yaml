@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podwithenv
+spec:
+  containers:
+  - name: container1
+    image: salman079/hello-world-kids
+    imagePullPolicy: IfNotPresent
+    env:
+      - name: USERNAME
+        value: salman079
+      - name: COURSENAME
+        value: Kubernetes
+        

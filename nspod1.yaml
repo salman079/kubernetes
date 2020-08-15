@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: myfirstnspod
+  namespace: production
+spec:
+  containers:
+  - name: container1
+    image: salman079/hello-world-ss:latest
+    ports:
+    - containerPort: 80

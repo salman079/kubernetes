@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: mysecondpod
+spec:
+  containers:
+  - name: container1
+    image: salman079/hello-world-2:latest
+    ports:
+    - containerPort: 80

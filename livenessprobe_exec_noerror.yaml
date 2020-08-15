@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+ name: livenessprobe-exec-noerror
+spec:
+ containers:
+ - name: lpexec
+   image: salman079/hello-world-kids
+   ports:
+   - containerPort: 80
+   livenessProbe:
+     exec:
+       command:
+       - ls

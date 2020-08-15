@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: podwithannotation
+  annotations:
+    createdBy: "Salman Siddiqui"
+    homeaddress: "C60 Block J"
+    email: salman079@yahoo.com
+spec:
+  containers:
+  - name: container-new
+    image: salman079/hello-world-2
+    ports:
+    - containerPort: 80

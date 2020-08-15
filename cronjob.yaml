@@ -1,0 +1,18 @@
+kind: CronJob
+apiVersion: batch/v1beta1
+metadata:
+  name: myfirstcronjob
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: cjexample
+        spec:
+          containers:
+          - name: cjwhalesasay
+            image: docker/whalesay
+            command: ["cowsay", "This is Cronjob Kubernetes!!!!"]
+          restartPolicy: Never

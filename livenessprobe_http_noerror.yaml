@@ -1,0 +1,19 @@
+kind: Pod
+apiVersion: v1
+metadata:
+ name: ln-http-noerror
+spec:
+ containers:
+ - name: myapp
+   image: salman079/hello-world-kids
+   ports:
+   - containerPort: 80
+   livenessProbe:
+     httpGet:     
+       port: 80
+       path: /
+     failureThreshold: 3
+     periodSeconds: 10
+     successThreshold: 1
+     timeoutSeconds: 1
+     initialDelaySeconds: 15

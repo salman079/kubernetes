@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+ name: readiness-exec-noerror
+spec:
+ containers:
+ - name: rn-exec-noerror
+   image: salman079/hello-world-kids
+   ports:
+   - containerPort: 80
+   readinessProbe:
+     exec:
+       command:
+       - ls

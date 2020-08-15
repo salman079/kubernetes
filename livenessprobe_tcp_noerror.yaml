@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+ name: ln-tcp-noerror
+spec:
+ containers:
+ - name: myapp
+   image: salman079/hello-world-kids
+   ports:
+   - containerPort: 80
+   livenessProbe:
+     tcpSocket:
+       port: 80

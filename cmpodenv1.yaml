@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podwithcmenv
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: container1
+    image: aamirpinger/node-app-image
+    imagePullPolicy: IfNotPresent
+    envFrom:
+    - configMapRef:
+        name: cm1-env-file

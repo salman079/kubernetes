@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podwithcmenv2
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: container1
+    image: salman079/hello-world-kids
+    imagePullPolicy: IfNotPresent
+    envFrom:
+    - configMapRef:
+        name: cm1-env-file
